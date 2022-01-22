@@ -39,7 +39,7 @@ public class English extends Wordle {
             if ((userWord.length() != 5)) {
                 System.out.println("The word " + userWord + " does not have 5 letters.");
             } else {
-                System.out.println("The word " + userWord + " does not exist.");
+                System.out.println("The word " + userWord + " is not in the word list.");
             }
             // Ask for a new word
             System.out.println("Please, submit a new 5-letter word.");
