@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class English extends Wordle {
@@ -29,7 +29,7 @@ public class English extends Wordle {
         System.out.println("Please write down your first guess:");
     }
 
-    public String obtainValidUserWord (ArrayList<String> wordList, int index) {
+    public String obtainValidUserWord (List<String> wordList, int index) {
         Scanner myScanner = new Scanner(System.in);  // Create a Scanner object
         String userWord = myScanner.nextLine();  // Read user input
         userWord = userWord.toLowerCase(); // covert to lowercase
@@ -50,7 +50,7 @@ public class English extends Wordle {
     }
 
 
-    public void printingColouredAlphabet(ArrayList<Character> greenLetters, ArrayList<Character> yellowLetters, ArrayList<Character> greyLetters) {
+    public void printingColouredAlphabet(List<Character> greenLetters, List<Character> yellowLetters, List<Character> greyLetters) {
         char c;
 
         for (c = 'A'; c <= 'Z'; ++c) {
