@@ -15,6 +15,7 @@ public class English extends Wordle {
     }
 
     // METHODS
+
     // print instructions
     public void printInstructions() {
         System.out.println("The game has chosen a 5-letter word for you to guess.");
@@ -24,11 +25,13 @@ public class English extends Wordle {
         System.out.println("- Letters highlighted in " + ANSI_GREY_BACKGROUND + "grey" + ANSI_RESET + " do not appear in the chosen word.");
     }
 
+    // ask the user for their first word
     public void askForFirstGuess() {
         System.out.println();
         System.out.println("Please write down your first guess:");
     }
 
+    // verify the validity of the user word by length and check against available options
     public String obtainValidUserWord (ArrayList<String> wordList, int index) {
         Scanner myScanner = new Scanner(System.in);  // Create a Scanner object
         String userWord = myScanner.nextLine();  // Read user input
@@ -49,7 +52,7 @@ public class English extends Wordle {
         return userWord;
     }
 
-
+    // print the alphabet with the associated colour for each letter
     public void printingColouredAlphabet(ArrayList<Character> greenLetters, ArrayList<Character> yellowLetters, ArrayList<Character> greyLetters) {
         char c;
 
@@ -67,7 +70,7 @@ public class English extends Wordle {
 
     }
 
-    public void printDefinitionLink (String randomChosenWord) {
+    public void printDefinitionLink (String randomChosenWord) { // prints the link to the dictionary definition of the chosen word
         System.out.println("The word's definition: https://www.merriam-webster.com/dictionary/" + randomChosenWord);
     }
 
