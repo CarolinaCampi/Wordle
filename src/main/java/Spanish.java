@@ -50,9 +50,8 @@ public class Spanish extends Wordle { // Spanish child class from parent class W
             userWord = myScanner.nextLine();
             modifiedUserWord = userWord.toLowerCase();
             modifiedUserWord = removeAccents(modifiedUserWord);
-
         }
-        return userWord;
+        return modifiedUserWord;
     }
 
 
