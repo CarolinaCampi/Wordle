@@ -1,26 +1,23 @@
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 import java.text.Normalizer;
 
 
 public abstract class Wordle {
 
     // Declaring variables and arrayLists
-    static ArrayList<String> languagePossibilities = new ArrayList<>(Arrays.asList("a", "english", "b", "español"));
+    static List<String> languagePossibilities = new ArrayList<>(Arrays.asList("a", "english", "b", "español"));
     protected String dictionaryFileName;
     protected String dictionaryWithoutAccentsFileName;
     protected String chosenWord;
     protected String chosenWordWithoutAccents;
-    protected ArrayList<String> wordListWithoutAccents;
-    protected ArrayList<String> wordList;
-    protected ArrayList<Character> greenLetters = new ArrayList<>();
-    protected ArrayList<Character> yellowLetters = new ArrayList<>();
-    protected ArrayList<Character> greyLetters = new ArrayList<>();
+    protected List<String> wordListWithoutAccents;
+    protected List<String> wordList;
+    protected List<Character> greenLetters = new ArrayList<>();
+    protected List<Character> yellowLetters = new ArrayList<>();
+    protected List<Character> greyLetters = new ArrayList<>();
     protected String result;
     protected String youWonMessage;
     protected String youLostMessage;
@@ -38,9 +35,9 @@ public abstract class Wordle {
     // METHODS
 
     // Read the dictionary and assemble the dictionary arrayList from which to choose the random chosen word
-    public ArrayList<String> readDictionary(String fileName) {
+    public List<String> readDictionary(String fileName) {
 
-        ArrayList<String> wordList = new ArrayList<>();
+        List<String> wordList = new ArrayList<>();
 
         try {
             // Open and read the dictionary file
@@ -63,7 +60,7 @@ public abstract class Wordle {
     }
 
     // get a random word from the dictionary arraylist
-    public String getRandomWord(ArrayList<String> wordList) {
+    public String getRandomWord(List<String> wordList) {
         Random rand = new Random(); //instance of random class
         int upperbound = wordList.size();
         //generate random values from 0 to arrayList size
@@ -83,7 +80,7 @@ public abstract class Wordle {
 
 
     // ask the user for a word, check for validity
-    public abstract String obtainValidUserWord (ArrayList<String> wordList, int index);
+    public abstract String obtainValidUserWord (List<String> wordList, int index);
 
     // method that replaces a char in a string at a specific index
     public String replaceChar(String str, char ch, int index) {
@@ -95,7 +92,7 @@ public abstract class Wordle {
     // print definition
     public abstract void printDefinitionLink (String randomChosenWord);
 
-    public void loopThroughSixGuesses(ArrayList<String> wordList) {
+    public void loopThroughSixGuesses(List<String> wordList) {
 
         for (int j = 0; j < 6; j++) {
 
@@ -174,7 +171,7 @@ public abstract class Wordle {
 
 
     // printing the alphabet including the colors for a more visual exposition of information
-    public abstract void printingColouredAlphabet(ArrayList<Character> greenLetters, ArrayList<Character> yellowLetters,ArrayList<Character> greyLetters);
+    public abstract void printingColouredAlphabet(List<Character> greenLetters, List<Character> yellowLetters, List<Character> greyLetters);
 
     // play method that calls on all other methods.
     public void play () {
