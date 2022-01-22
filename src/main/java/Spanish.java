@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Spanish extends Wordle { // Spanish child class from parent class Wordle
@@ -33,7 +33,7 @@ public class Spanish extends Wordle { // Spanish child class from parent class W
     }
 
     // verify the validity of the user word by length and check against available options
-    public String obtainValidUserWord (ArrayList<String> wordList, int index) {
+    public String obtainValidUserWord (List<String> wordList, int index) {
         Scanner myScanner = new Scanner(System.in);  // Create a Scanner object
         String userWord = myScanner.nextLine();  // Read user input
         String modifiedUserWord = userWord.toLowerCase(); // covert to lowercase
@@ -59,7 +59,7 @@ public class Spanish extends Wordle { // Spanish child class from parent class W
     }
 
     // prints the coloured alphabet including Ñ
-    public void printingColouredAlphabet(ArrayList<Character> greenLetters, ArrayList<Character> yellowLetters, ArrayList<Character> greyLetters) {
+    public void printingColouredAlphabet(List<Character> greenLetters, List<Character> yellowLetters, List<Character> greyLetters) {
         char c;
 
         for (c = 'A'; c <= 'N'; ++c) {
