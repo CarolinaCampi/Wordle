@@ -28,7 +28,7 @@ public class Main {
 
         if (language.equals("english") || language.equals("a")) {
             newGame = new English();
-        } else { //(language.equals("español") || language.equals("b")) {
+        } else { //(language.equals("español") || language.equals("b"))
             newGame = new Spanish();
         }
 

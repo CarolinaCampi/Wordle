@@ -7,8 +7,9 @@ public class Spanish extends Wordle { // Spanish child class from parent class W
 
     public Spanish() { //constructor
         super(); //use the constructor from parent class
-        dictionaryWithoutAccentsFileName = "diccionario-sin-tildes.txt";
-        dictionaryFileName = "diccionario-con-tildes.txt";
+        chosenWordListWithoutAccentsFileName = "diccionario-sin-tildes.txt";
+        chosenWordListFileName = "diccionario-con-tildes.txt";
+        userDictionaryWithoutAccentsFileName = "extended-diccionario-sin-tildes.txt";
         result = "Resultado: ";
         youWonMessage = "FELICITACIONES! HA GANADO! :)";
         youLostMessage = "HA PERDIDO :( LA PALABRA ELEGIDA POR EL JUEGO ES: ";

@@ -7,8 +7,9 @@ public class English extends Wordle {
 
     public English() { //constructor
         super(); //use the constructor from parent class
-        dictionaryFileName = "dictionary.txt";
-        dictionaryWithoutAccentsFileName = "dictionary.txt";
+        chosenWordListFileName = "dictionary.txt";
+        chosenWordListWithoutAccentsFileName = "dictionary.txt";
+        userDictionaryWithoutAccentsFileName = "extended-dictionary.txt";
         result = "Result: ";
         youWonMessage = "CONGRATULATIONS! YOU WON! :)";
         youLostMessage = "YOU LOST :( THE WORD CHOSEN BY THE GAME IS: ";

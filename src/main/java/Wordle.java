@@ -9,12 +9,14 @@ public abstract class Wordle {
 
     // Declaring variables and arrayLists
     static List<String> languagePossibilities = new ArrayList<>(Arrays.asList("a", "english", "b", "español"));
-    protected String dictionaryFileName;
-    protected String dictionaryWithoutAccentsFileName;
+    protected String chosenWordListFileName;
+    protected String chosenWordListWithoutAccentsFileName;
+    protected String userDictionaryWithoutAccentsFileName;
     protected String chosenWord;
     protected String chosenWordWithoutAccents;
-    protected List<String> wordListWithoutAccents;
-    protected List<String> wordList;
+    protected List<String> chosenWordListWithoutAccents;
+    protected List<String> chosenWordList;
+    protected List<String> userWordListWithoutAccents;
     protected List<Character> greenLetters = new ArrayList<>();
     protected List<Character> yellowLetters = new ArrayList<>();
     protected List<Character> greyLetters = new ArrayList<>();
@@ -176,11 +178,12 @@ public abstract class Wordle {
     // play method that calls on all other methods.
     public void play () {
         // Open and read the dictionary file with accents and without
-        wordList = this.readDictionary(dictionaryFileName);
-        wordListWithoutAccents = this.readDictionary(dictionaryWithoutAccentsFileName);
+        chosenWordList = this.readDictionary(chosenWordListFileName);
+        chosenWordListWithoutAccents = this.readDictionary(chosenWordListWithoutAccentsFileName);
+        userWordListWithoutAccents = this.readDictionary(userDictionaryWithoutAccentsFileName);
 
         // Selecting a random word from the dictionary
-        chosenWord = getRandomWord(wordList);
+        chosenWord = getRandomWord(chosenWordList);
 
         // remove the accents from the word, if any
         chosenWordWithoutAccents = removeAccents(chosenWord);
@@ -191,7 +194,7 @@ public abstract class Wordle {
         // ask the user for the first guess
         this.askForFirstGuess();
 
-        this.loopThroughSixGuesses(wordListWithoutAccents);
+        this.loopThroughSixGuesses(userWordListWithoutAccents);
 
     }
 

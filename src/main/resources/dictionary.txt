@@ -2011,7 +2011,7 @@ genii
 leash
 drone
 crumb
-Galen
+Galeno
 adobe
 savor
 remit
