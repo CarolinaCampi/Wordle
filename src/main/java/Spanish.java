@@ -1,9 +1,8 @@
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Scanner;
 
 public class Spanish extends Wordle { // Spanish child class from parent class Wordle
-
-
 
     public Spanish() { //constructor
         super(); //use the constructor from parent class
@@ -13,7 +12,6 @@ public class Spanish extends Wordle { // Spanish child class from parent class W
         result = "Resultado: ";
         youWonMessage = "FELICITACIONES! HA GANADO! :)";
         youLostMessage = "HA PERDIDO :( LA PALABRA ELEGIDA POR EL JUEGO ES: ";
-
     }
 
     // METHODS
@@ -35,7 +33,7 @@ public class Spanish extends Wordle { // Spanish child class from parent class W
 
     // verify the validity of the user word by length and check against available options
     public String obtainValidUserWord (List<String> wordList, int index) {
-        Scanner myScanner = new Scanner(System.in);  // Create a Scanner object
+        Scanner myScanner = new Scanner(System.in, StandardCharsets.UTF_8);  // Create a Scanner object
         String userWord = myScanner.nextLine();  // Read user input
         String modifiedUserWord = userWord.toLowerCase(); // covert to lowercase
         modifiedUserWord = removeAccents(modifiedUserWord); // remove special characters
@@ -74,6 +72,7 @@ public class Spanish extends Wordle { // Spanish child class from parent class W
                 System.out.print(c + " ");
             }
         }
+
         char enie = 'Ñ';
 
         if (greenLetters.contains(enie)) {

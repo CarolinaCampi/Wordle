@@ -30,7 +30,7 @@ public abstract class Wordle {
     public static final String ANSI_YELLOW_BACKGROUND = "\u001B[43m";
     public static final String ANSI_GREY_BACKGROUND = "\u001B[100m";
 
-    //constructor
+    // Constructor
     public Wordle() {
     }
 
@@ -61,11 +61,11 @@ public abstract class Wordle {
         return wordList;
     }
 
-    // get a random word from the dictionary arraylist
+    // Get a random word from the dictionary arraylist
     public String getRandomWord(List<String> wordList) {
         Random rand = new Random(); //instance of random class
         int upperbound = wordList.size();
-        //generate random values from 0 to arrayList size
+        // generate random values from 0 to arrayList size
         int int_random = rand.nextInt(upperbound);
         return wordList.get(int_random);
     }
@@ -172,7 +172,7 @@ public abstract class Wordle {
     }
 
 
-    // printing the alphabet including the colors for a more visual exposition of information
+    // printing the alphabet including the colors for a visual exposition of information
     public abstract void printingColouredAlphabet(List<Character> greenLetters, List<Character> yellowLetters, List<Character> greyLetters);
 
     // play method that calls on all other methods.
