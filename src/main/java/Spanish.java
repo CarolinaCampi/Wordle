@@ -33,7 +33,7 @@ public class Spanish extends Wordle { // Spanish child class from parent class W
 
     // verify the validity of the user word by length and check against available options
     public String obtainValidUserWord (List<String> wordList, int index) {
-        Scanner myScanner = new Scanner(System.in, StandardCharsets.UTF_8);  // Create a Scanner object
+        Scanner myScanner = new Scanner(System.in, StandardCharsets.UTF_8.displayName());  // Create a Scanner object
         String userWord = myScanner.nextLine();  // Read user input
         String modifiedUserWord = userWord.toLowerCase(); // covert to lowercase
         modifiedUserWord = removeAccents(modifiedUserWord); // remove special characters

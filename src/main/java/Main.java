@@ -11,7 +11,7 @@ public class Main {
         System.out.println("A) English");
         System.out.println("B) Español");
         System.out.print("--> ");
-        Scanner sc = new Scanner(System.in, StandardCharsets.UTF_8);  // Create a Scanner object
+        Scanner sc = new Scanner(System.in, StandardCharsets.UTF_8.displayName());  // Create a Scanner object
         String language = sc.nextLine();  // Read user input
         language = language.toLowerCase(); // covert to lowercase
 
